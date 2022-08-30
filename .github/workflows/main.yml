@@ -39,6 +39,7 @@ jobs:
         with:
           key: ${{ secrets.SSH_KEY }}
           name: id_rsa # optional
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
           if_key_exists: replace # replace / ignore / fail; optional (defaults to fail)
 
       - name: Run playbook
