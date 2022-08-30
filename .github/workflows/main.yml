@@ -11,8 +11,9 @@ jobs:
       - name: checkout the source 
         uses: actions/checkout@v3
       - name: Ansible Linting
-        uses: ansible-community/ansible-lint-action@v6.3.0
+        uses: ansible/ansible-lint-action@c37fb7b4bda2c8cb18f4942716bae9f11b0dc9bc
         with:
-          path: "ansible/"
-          args: "ansible/.ansible-lint"
-       
+         targets: |
+          ansible/playbook.yml
+          ansible/inventory.yml
+         args: "-c ansible/.ansible-lint"
