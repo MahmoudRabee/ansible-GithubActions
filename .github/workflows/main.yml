@@ -13,7 +13,5 @@ jobs:
       - name: Ansible Linting
         uses: ansible-community/ansible-lint-action@v6.3.0
         with:
-          path: |
-            ansible/playbook.yml
-            ansible/inventory.yml
+          path: "ansible/"
        
