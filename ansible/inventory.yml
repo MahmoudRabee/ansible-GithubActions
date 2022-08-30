@@ -5,4 +5,8 @@ all:
       hosts:
         localhost
       vars:
-        ansible_user: flanders
+        ansible_ssh_private_key_file: ~/.ssh/id_rsa
+        ansible_user: egirna
+        ansible_password: Egirna@123!@#
+        ansible_become_pass: Egirna@123!@#
+        
