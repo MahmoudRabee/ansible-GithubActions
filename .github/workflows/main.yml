@@ -10,10 +10,10 @@ jobs:
     steps:
       - name: checkout the source 
         uses: actions/checkout@v3
-      - name: Ansible Linting
-        uses: ansible/ansible-lint-action@c37fb7b4bda2c8cb18f4942716bae9f11b0dc9bc
-        with:
-         targets: |
-          ansible/playbook.yml
-          ansible/inventory.yml
-         args: "-c ansible/.ansible-lint"
+#       - name: Ansible Linting
+#         uses: ansible/ansible-lint-action@c37fb7b4bda2c8cb18f4942716bae9f11b0dc9bc
+#         with:
+#          targets: |
+#           ansible/playbook.yml
+#           ansible/inventory.yml
+#          args: "-c ansible/.ansible-lint"
