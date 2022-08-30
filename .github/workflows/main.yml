@@ -16,4 +16,30 @@ jobs:
 #          targets: |
 #           ansible/playbook.yml
 #           ansible/inventory.yml
-#          args: "-c ansible/.ansible-lint"
+#          args: "-c ansible/.ansible-lint
+      - name: publish playbook artifact
+        uses: actions/upload-artifact@v2
+        with:
+         name: playbooks
+         path: ansible 
+ 
+  deploy:
+      name: Deploy to server 
+      runs-on: ubuntu-latest
+      steps:
+      - name: download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: playbooks
+          path: ansible
+
+      - name: Run playbook
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+          playbook: playbook.yml
+          directory: ansible
+          options: |
+            --inventory inventory.yml
+
+      
+   
