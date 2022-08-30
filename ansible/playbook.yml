@@ -51,22 +51,15 @@
 
 
 
-- name: deploy app
-  hosts: esx
+- name: test copy
+  hosts: all
   become: true
   tasks:
-    - name: copy docker compose file 
+    - name: copy ansible
       copy:
-        src: /home/mahmoud/projects/compose/docker-compose.yml
+        src: ansible
         dest: /home/egirna/compose
-    - name: run docker compose 
-      docker_compose:
-        project_src: compose
-        state: present
-        nocache: yes
-        build: yes
-        recreate: always
-        pull: yes
+
 
 
 
