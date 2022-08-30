@@ -14,4 +14,5 @@ jobs:
         uses: ansible-community/ansible-lint-action@v6.3.0
         with:
           path: "ansible/"
+          args: "-c ansible/.ansible-lint"
        
