@@ -57,8 +57,8 @@
   tasks:
     - name: copy ansible
       copy:
-        src: ansible
-        dest: /home/egirna/compose
+        content: "HHHHeloo"
+        dest: /home/egirna/compose/hello.txt
 
 
 
